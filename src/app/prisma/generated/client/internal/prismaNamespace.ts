@@ -80,12 +80,12 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 7.4.1
- * Query Engine version: 55ae170b1ced7fc6ed07a15f110549408c501bb3
+ * Prisma Client JS version: 7.4.0
+ * Query Engine version: ab56fe763f921d033a6c195e7ddeb3e255bdbb57
  */
 export const prismaVersion: PrismaVersion = {
-  client: "7.4.1",
-  engine: "55ae170b1ced7fc6ed07a15f110549408c501bb3"
+  client: "7.4.0",
+  engine: "ab56fe763f921d033a6c195e7ddeb3e255bdbb57"
 }
 
 /**
@@ -142,7 +142,7 @@ type SelectAndOmit = {
  * From T, pick a set of properties whose keys are in the union K
  */
 type Prisma__Pick<T, K extends keyof T> = {
-    [P in K]: T[P];
+  [P in K]: T[P];
 };
 
 export type Enumerable<T> = T | Array<T>;
@@ -166,8 +166,8 @@ export type SelectSubset<T, U> = {
   (T extends SelectAndInclude
     ? 'Please either choose `select` or `include`.'
     : T extends SelectAndOmit
-      ? 'Please either choose `select` or `omit`.'
-      : {})
+    ? 'Please either choose `select` or `omit`.'
+    : {})
 
 /**
  * Subset + Intersection
@@ -187,7 +187,7 @@ type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
 export type XOR<T, U> =
   T extends object ?
   U extends object ?
-    (Without<T, U> & U) | (Without<U, T> & T)
+  (Without<T, U> & U) | (Without<U, T> & T)
   : U : T
 
 
@@ -195,16 +195,16 @@ export type XOR<T, U> =
  * Is T a Record?
  */
 type IsObject<T extends any> = T extends Array<any>
-? False
-: T extends Date
-? False
-: T extends Uint8Array
-? False
-: T extends BigInt
-? False
-: T extends object
-? True
-: False
+  ? False
+  : T extends Date
+  ? False
+  : T extends Uint8Array
+  ? False
+  : T extends BigInt
+  ? False
+  : T extends object
+  ? True
+  : False
 
 
 /**
@@ -255,19 +255,19 @@ export type IntersectOf<U extends Union> = (
   : never
 
 export type Overwrite<O extends object, O1 extends object> = {
-    [K in keyof O]: K extends keyof O1 ? O1[K] : O[K];
+  [K in keyof O]: K extends keyof O1 ? O1[K] : O[K];
 } & {};
 
 type _Merge<U extends object> = IntersectOf<Overwrite<U, {
-    [K in keyof U]-?: At<U, K>;
+  [K in keyof U]-?: At<U, K>;
 }>>;
 
 type Key = string | number | symbol;
 type AtStrict<O extends object, K extends Key> = O[K & keyof O];
 type AtLoose<O extends object, K extends Key> = O extends unknown ? AtStrict<O, K> : never;
 export type At<O extends object, K extends Key, strict extends Boolean = 1> = {
-    1: AtStrict<O, K>;
-    0: AtLoose<O, K>;
+  1: AtStrict<O, K>;
+  0: AtLoose<O, K>;
 }[strict];
 
 export type ComputeRaw<A extends any> = A extends Function ? A : {
@@ -289,7 +289,7 @@ type NoExpand<T> = T extends unknown ? T : never;
 export type AtLeast<O extends object, K extends string> = NoExpand<
   O extends unknown
   ? | (K extends keyof O ? { [P in K]: O[P] } & O : O)
-    | {[P in keyof O as P extends K ? P : never]-?: O[P]} & O
+  | { [P in keyof O as P extends K ? P : never]-?: O[P] } & O
   : never>;
 
 type _Strict<U, _U = U> = U extends unknown ? U & OptionalFlat<_Record<Exclude<Keys<_U>, keyof U>, never>> : never;
@@ -335,8 +335,8 @@ export type Keys<U extends Union> = U extends unknown ? keyof U : never
 
 export type GetScalarType<T, O> = O extends object ? {
   [P in keyof T]: P extends keyof O
-    ? O[P]
-    : never
+  ? O[P]
+  : never
 } : never
 
 type FieldPaths<
@@ -349,15 +349,15 @@ export type GetHavingFields<T> = {
     Or<Extends<'OR', K>, Extends<'AND', K>>,
     Extends<'NOT', K>
   > extends True
-    ? // infer is only needed to not hit TS limit
-      // based on the brilliant idea of Pierre-Antoine Mills
-      // https://github.com/microsoft/TypeScript/issues/30188#issuecomment-478938437
-      T[K] extends infer TK
-      ? GetHavingFields<UnEnumerate<TK> extends object ? Merge<UnEnumerate<TK>> : never>
-      : never
-    : {} extends FieldPaths<T[K]>
-    ? never
-    : K
+  ? // infer is only needed to not hit TS limit
+  // based on the brilliant idea of Pierre-Antoine Mills
+  // https://github.com/microsoft/TypeScript/issues/30188#issuecomment-478938437
+  T[K] extends infer TK
+  ? GetHavingFields<UnEnumerate<TK> extends object ? Merge<UnEnumerate<TK>> : never>
+  : never
+  : {} extends FieldPaths<T[K]>
+  ? never
+  : K
 }[keyof T]
 
 /**
@@ -391,7 +391,7 @@ export type ModelName = (typeof ModelName)[keyof typeof ModelName]
 
 
 
-export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{extArgs: runtime.Types.Extensions.InternalArgs }, runtime.Types.Utils.Record<string, any>> {
+export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{ extArgs: runtime.Types.Extensions.InternalArgs }, runtime.Types.Utils.Record<string, any>> {
   returns: TypeMap<this['params']['extArgs'], GlobalOmitOptions>
 }
 
@@ -521,6 +521,7 @@ export const ProjectScalarFieldEnum = {
   id: 'id',
   title: 'title',
   description: 'description',
+  likes: 'likes',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -554,56 +555,56 @@ export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
+
 
 
 /**
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
+
 
 
 /**
  * Reference to a field of type 'String'
  */
 export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
+
 
 
 /**
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
-    
+
 
 
 /**
  * Reference to a field of type 'DateTime'
  */
 export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
+
 
 
 /**
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
+
 
 
 /**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
-    
+
 
 
 /**
  * Reference to a field of type 'Float[]'
  */
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
+
 
 /**
  * Batch Payload for updateMany & deleteMany & createMany
@@ -763,4 +764,3 @@ export type PrismaAction =
  * `PrismaClient` proxy available in interactive transactions.
  */
 export type TransactionClient = Omit<DefaultPrismaClient, runtime.ITXClientDenyList>
-
