@@ -96,17 +96,20 @@ export async function createProjectOptimisticAction(
         };
     }
 
-    const image = formData.get("image") as File;
-    const isValid = isValidImage(image);
-    if (!isValid) {
-        return {
-            success: false,
-            message: "El archivo debe ser una imagen",
-            requestId: Date.now(),
-        };
-    }
+    const image = formData.get("image") as File | null;
+    let imageUrl: string | undefined;
 
-    const imageUrl = await saveImageInPublic(image);
+    if (image && image.size > 0) {
+        const isValid = isValidImage(image);
+        if (!isValid) {
+            return {
+                success: false,
+                message: "El archivo debe ser una imagen",
+                requestId: Date.now(),
+            };
+        }
+        imageUrl = await saveImageInPublic(image);
+    }
 
     try {
         const newProjectData = validatedFields.data;
