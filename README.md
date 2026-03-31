@@ -1,47 +1,49 @@
-# React Avanzado 19 - Módulo 10
+# ⚛️ React Avanzado - Módulo KeepCoding
 
-Repositorio del módulo 10 de React Avanzado en KeepCoding, centrado en Next.js y el enfoque Server First.
+<div align="center">
 
-## Sobre mí
+[![Next.js](https://img.shields.io/badge/nextdotjs-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://es.react.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/postgresql-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Prisma](https://img.shields.io/badge/prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![Docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-Soy Alex Martínez, desarrollador Full-Stack, y en este repositorio voy documentando y construyendo los ejercicios y entregas del módulo.
+</div>
 
-## Qué se trabaja en React Avanzado (Módulo 10)
+Ejercicios y material del módulo de **React Avanzado** del Bootcamp de Desarrollo Web FullStack en [KeepCoding](https://keepcoding.io/), centrado en Next.js y el enfoque Server First.
 
-El módulo recorre 6 bloques prácticos:
+> 📌 La práctica final de este módulo está en un repositorio aparte: [nextjs-marketplace](https://github.com/Aratea10/nextjs-marketplace)
+
+---
+
+## 📚 Contenido del módulo
 
 1. RSC y arquitectura con App Router.
 2. Fetching de datos y Streaming.
 3. Mutaciones con Server Actions.
 4. Formularios y UX avanzada (`useActionState`, `useOptimistic`).
 5. Control de errores y seguridad (`error.tsx`, `not-found.tsx`, validación y middleware).
-6. Testing y calidad en producción (unit testing de Server Actions, límites serverless y despliegue).
+6. Testing y calidad en producción.
 
-Idea central del módulo: mover la lógica pesada al servidor y dejar el cliente para interactividad puntual.
+> Idea central: mover la lógica pesada al servidor y dejar el cliente para interactividad puntual.
 
-## Contenido del repositorio
+---
 
-Estructura actual y objetivo de organización:
+## 📁 Estructura del repositorio
 
-```text
-.
-├── docs/.                 # presentación oficial del módulo y enunciado de práctica
+````text
+├── docs/                   # Presentación del módulo y enunciado de práctica
 │   ├── React Avanzado.pdf
 │   └── Práctica Next.js Marketplace de Anuncios.pdf
-├── setup-db/               # entorno local de BD (Docker + PostgreSQL) y guía Prisma
+├── setup-db/               # Entorno local de BD (Docker + PostgreSQL) y guía Prisma
 │   ├── docker-compose.yml
-│   └── README.md
-└── src/                    # contenido de clases en curso
-```
+│   └── [README.md](https://github.com/Aratea10/react-advanced/blob/main/README.md)
+└── src/                    # Ejercicios de clase
+````
 
-## Práctica a completar durante estas semanas
+---
 
-En el enunciado de la práctica `docs/Práctica Next.js Marketplace de Anuncios.pdf`, la entrega es una app Fullstack tipo marketplace en Next.js (App Router) con estos mínimos:
+## 👩‍💻 Autora
 
-1. Listado de anuncios en servidor (sin `useEffect` para carga inicial), filtros por URL y `loading.js` para Streaming.
-2. Detalle dinámico en `/ads/[id]` con `generateMetadata` para SEO básico.
-3. Login y creación de anuncios con Server Actions, validación en servidor y `revalidatePath`.
-4. Manejo de errores con `not-found.js` y `error.js`.
-5. Testing: al menos 1 test unitario de una Server Action.
-
-Extras para nota máxima: proteger `/ads/create` con middleware, implementar Optimistic UI y demostrar buena separación Server/Client Components.
+**Sara Gallego Méndez** — Estudiante del Bootcamp de Desarrollo Web FullStack en [KeepCoding](https://keepcoding.io/).
